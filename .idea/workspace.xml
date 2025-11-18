@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9a00bef-076b-472c-b927-7da97f348dcb" name="Changes" comment="" />
+    <list default="true" id="e9a00bef-076b-472c-b927-7da97f348dcb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/UconnectPolicies.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reports/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Reports/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reports/report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../run_tests.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../run_tests.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tests/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../tests/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tests/test_run_sequential.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../tests/test_run_sequential.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -22,14 +38,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests in test_SOP_Doc.py.executor": "Run",
-    "Python tests.Python tests in test_sop_full_ddt.py.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests in test_SOP_Doc.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_sop_full_ddt.py.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

@@ -39,6 +39,34 @@ pipeline {
             }
         }
 
+
+    stages {
+        stage('Perform Step Before OTP') {
+            steps {
+                echo 'Running tests or steps before OTP input'
+                // Your automation steps before OTP
+            }
+        }
+
+        stage('Wait for OTP input') {
+            steps {
+                // Pause pipeline and prompt user in Jenkins UI
+                input message: 'Please enter OTP to continue', parameters: [
+                    string(defaultValue: '', description: 'Enter OTP here', name: 'OTP_CODE')
+                ]
+            }
+        }
+
+        stage('Continue After OTP') {
+            steps {
+                echo "Received OTP: ${params.OTP_CODE}"
+                // Use OTP_CODE in your automation as needed
+            }
+        }
+    }
+
+
+
         stage('Publish Reports') {
             steps {
                 publishHTML([
@@ -52,6 +80,8 @@ pipeline {
             }
         }
     }
+
+
 
     post {
         always {
