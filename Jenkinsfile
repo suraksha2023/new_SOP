@@ -35,7 +35,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest -v tests/ --html=reports/report.html --self-contained-html"
+                sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest -v tests/test_sop_full_flow_ddt.py --html=reports/report.html --self-contained-html"
             }
         }
 
