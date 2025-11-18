@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="14" time="545.673" timestamp="2025-11-18T11:48:23.803079+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data0]" time="42.973" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data1]" time="45.023" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data2]" time="51.988" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data3]" time="44.694" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data4]" time="43.475" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data5]" time="49.289" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data6]" time="46.332" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data7]" time="45.717" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data8]" time="50.563" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data9]" time="54.378" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data10]" time="63.780" /><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data11]" time="2.235"><failure message="TypeError: 'NoneType' object is not iterable">driver = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="cfa80cafa3d4853ca3ba6030c300e7fb")&gt;
+data = {'file_path': None, 'password': None, 'role': None, 'sop_title': None, ...}
+
+    @pytest.mark.parametrize("data", sop_data)
+    def test_sop_full_flow_ddt(driver, data):
+        login = LoginPage(driver)
+        proposer = SOPProposerPage(driver)
+        recommender = SOPRecommenderPage(driver)
+        approver = SOPApproverPage(driver)
+        proposer_approval = SOPProposerApproval(driver)
+        publisher = SOPPublishPage(driver)
+    
+        role = data["role"]
+        username = data["username"]
+        password = data["password"]
+        sop_title = data["sop_title"]
+        sop_file = data.get("file_path")
+    
+        print(f"\n#x1F539 Running step for {role} ({username})")
+    
+&gt;       login.login(username, password)
+
+tests/test_sop_full_ddt.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:22: in login
+    self.driver.find_element(By.ID, "email").send_keys(username)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:304: in send_keys
+    Command.SEND_KEYS_TO_ELEMENT, {"text": "".join(keys_to_typing(value)), "value": keys_to_typing(value)}
+                                                   ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = (None,)
+
+    def keys_to_typing(value: Iterable[AnyKey]) -&gt; list[str]:
+        """Processes the values that will be typed in the element."""
+        characters: list[str] = []
+        for val in value:
+            if isinstance(val, Keys):
+                # Todo: Does this even work?
+                characters.append(str(val))
+            elif isinstance(val, (int, float)):
+                characters.extend(str(val))
+            else:
+&gt;               characters.extend(val)
+E               TypeError: 'NoneType' object is not iterable
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/common/utils.py:166: TypeError</failure></testcase><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data12]" time="2.031"><failure message="TypeError: 'NoneType' object is not iterable">driver = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="29e60b92ec60564498a237834673cfa7")&gt;
+data = {'file_path': None, 'password': None, 'role': None, 'sop_title': None, ...}
+
+    @pytest.mark.parametrize("data", sop_data)
+    def test_sop_full_flow_ddt(driver, data):
+        login = LoginPage(driver)
+        proposer = SOPProposerPage(driver)
+        recommender = SOPRecommenderPage(driver)
+        approver = SOPApproverPage(driver)
+        proposer_approval = SOPProposerApproval(driver)
+        publisher = SOPPublishPage(driver)
+    
+        role = data["role"]
+        username = data["username"]
+        password = data["password"]
+        sop_title = data["sop_title"]
+        sop_file = data.get("file_path")
+    
+        print(f"\n#x1F539 Running step for {role} ({username})")
+    
+&gt;       login.login(username, password)
+
+tests/test_sop_full_ddt.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:22: in login
+    self.driver.find_element(By.ID, "email").send_keys(username)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:304: in send_keys
+    Command.SEND_KEYS_TO_ELEMENT, {"text": "".join(keys_to_typing(value)), "value": keys_to_typing(value)}
+                                                   ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = (None,)
+
+    def keys_to_typing(value: Iterable[AnyKey]) -&gt; list[str]:
+        """Processes the values that will be typed in the element."""
+        characters: list[str] = []
+        for val in value:
+            if isinstance(val, Keys):
+                # Todo: Does this even work?
+                characters.append(str(val))
+            elif isinstance(val, (int, float)):
+                characters.extend(str(val))
+            else:
+&gt;               characters.extend(val)
+E               TypeError: 'NoneType' object is not iterable
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/common/utils.py:166: TypeError</failure></testcase><testcase classname="new code.pythonProject.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data13]" time="2.212"><failure message="TypeError: 'NoneType' object is not iterable">driver = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="b2eac2b1e6b7afe87f7b823e0dd8fb05")&gt;
+data = {'file_path': None, 'password': None, 'role': None, 'sop_title': None, ...}
+
+    @pytest.mark.parametrize("data", sop_data)
+    def test_sop_full_flow_ddt(driver, data):
+        login = LoginPage(driver)
+        proposer = SOPProposerPage(driver)
+        recommender = SOPRecommenderPage(driver)
+        approver = SOPApproverPage(driver)
+        proposer_approval = SOPProposerApproval(driver)
+        publisher = SOPPublishPage(driver)
+    
+        role = data["role"]
+        username = data["username"]
+        password = data["password"]
+        sop_title = data["sop_title"]
+        sop_file = data.get("file_path")
+    
+        print(f"\n#x1F539 Running step for {role} ({username})")
+    
+&gt;       login.login(username, password)
+
+tests/test_sop_full_ddt.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/login_page.py:22: in login
+    self.driver.find_element(By.ID, "email").send_keys(username)
+.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py:304: in send_keys
+    Command.SEND_KEYS_TO_ELEMENT, {"text": "".join(keys_to_typing(value)), "value": keys_to_typing(value)}
+                                                   ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = (None,)
+
+    def keys_to_typing(value: Iterable[AnyKey]) -&gt; list[str]:
+        """Processes the values that will be typed in the element."""
+        characters: list[str] = []
+        for val in value:
+            if isinstance(val, Keys):
+                # Todo: Does this even work?
+                characters.append(str(val))
+            elif isinstance(val, (int, float)):
+                characters.extend(str(val))
+            else:
+&gt;               characters.extend(val)
+E               TypeError: 'NoneType' object is not iterable
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/common/utils.py:166: TypeError</failure></testcase></testsuite></testsuites>
