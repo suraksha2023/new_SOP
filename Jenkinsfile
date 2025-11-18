@@ -29,6 +29,7 @@ pipeline {
                 sh "${env.PYTHON} -m venv venv"
                 sh "./venv/bin/python -m pip install --upgrade pip setuptools wheel"
                 sh "./venv/bin/pip install -r requirements.txt"
+                sh "./venv/bin/pip install webdriver-manager"
             }
         }
 
