@@ -14,6 +14,9 @@ def driver(request):
     options.add_argument("--start-maximized")
     # options.add_argument("--headless")  # Uncomment to run without opening browser window
 
+    options = Options()
+    options.add_argument('--headless')  # optional for headless mode
+
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
