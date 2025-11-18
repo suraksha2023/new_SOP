@@ -2,15 +2,13 @@ pipeline {
     agent any
 
     environment {
-        // Path to Python executable if not in system PATH
         PYTHON = "python3"
     }
 
     stages {
-
         stage('Clean Workspace') {
             steps {
-                // Remove everything in workspace including old .git and venv
+                // Optional: cleanup workspace, comment if needed
                 // deleteDir()
                 echo "Skipping workspace cleanup to avoid locked files"
             }
@@ -20,27 +18,23 @@ pipeline {
             steps {
                 git(
                     url: 'https://github.com/suraksha2023/new_SOP.git',
-                    branch: 'master' // or main if your repo uses it
-                    // credentialsId: ''  // Uncomment if your repo is private
+                    branch: 'main', // or 'master' depending on your repo
+                    credentialsId: ''  // add if private repo
                 )
             }
         }
 
         stage('Setup Python Environment') {
             steps {
-                // Create a Python virtual environment, upgrade pip, install dependencies
                 sh "${env.PYTHON} -m venv venv"
-                sh "./venv/bin/python -m pip install --upgrade pip"
+                sh "./venv/bin/python -m pip install --upgrade pip setuptools wheel"
                 sh "./venv/bin/pip install -r requirements.txt"
             }
         }
 
         stage('Run Tests') {
             steps {
-                // Ensure workspace is on PYTHONPATH for package imports
-                sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest -v tests"
-                // For HTML report:
-                // sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest --html=reports/report.html --self-contained-html tests"
+                sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest -v tests/ --html=reports/report.html --self-contained-html"
             }
         }
 
@@ -60,7 +54,7 @@ pipeline {
 
     post {
         always {
-            echo "Build finished — workspace cleaned up if needed."
+            echo "Build finished"
         }
         success {
             echo "Build succeeded!"
