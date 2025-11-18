@@ -40,7 +40,7 @@ pipeline {
         }
 
 
-    stages {
+
         stage('Perform Step Before OTP') {
             steps {
                 echo 'Running tests or steps before OTP input'
@@ -55,7 +55,7 @@ pipeline {
                     string(defaultValue: '', description: 'Enter OTP here', name: 'OTP_CODE')
                 ]
             }
-        }
+        
 
         stage('Continue After OTP') {
             steps {
