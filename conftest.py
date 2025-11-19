@@ -11,7 +11,7 @@ import os
 def driver(request):
     """Start and yield a Chrome WebDriver, then quit afterward."""
     options = Options()
-    options.add_argument("--start-maximized")
+    # options.add_argument("--start-maximized")
     # options.add_argument("--headless")  # Uncomment to run without opening browser window
 
     options = Options()

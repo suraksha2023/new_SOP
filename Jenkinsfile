@@ -3,23 +3,15 @@ pipeline {
 
     environment {
         PYTHON = "python3"
+        DISPLAY = ":0"    // 👈 IMPORTANT (enables live browser)
     }
 
     stages {
-        stage('Clean Workspace') {
-            steps {
-                // Optional: cleanup workspace, comment if needed
-                // deleteDir()
-                echo "Skipping workspace cleanup to avoid locked files"
-            }
-        }
-
         stage('Checkout Code') {
             steps {
                 git(
                     url: 'https://github.com/suraksha2023/new_SOP.git',
-                    branch: 'main', // or 'master' depending on your repo
-                    credentialsId: ''  // add if private repo
+                    branch: 'main'
                 )
             }
         }
@@ -33,65 +25,49 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Tests Before OTP') {
             steps {
-                sh "export PYTHONPATH=\$(pwd):\$PYTHONPATH && ./venv/bin/python -m pytest -v tests/test_sop_full_flow_ddt.py --html=reports/report.html --self-contained-html"
+                sh """
+                    export PYTHONPATH=\$(pwd):\$PYTHONPATH
+                    ./venv/bin/pytest -v tests/test_sop_full_flow_ddt.py \
+                        --html=reports/report.html --self-contained-html
+                """
             }
         }
 
-
-
-        stage('Perform Step Before OTP') {
+        stage('OTP Input Required') {
             steps {
-                echo 'Running tests or steps before OTP input'
-                // Your automation steps before OTP
+                script {
+                    def otp = input(
+                        message: 'Enter OTP to continue',
+                        parameters: [string(name: 'OTP_CODE', description: 'Enter OTP here')]
+                    )
+                    env.OTP_VALUE = otp
+                }
             }
         }
-
-        stage('Wait for OTP input') {
-            steps {
-                // Pause pipeline and prompt user in Jenkins UI
-                input message: 'Please enter OTP to continue', parameters: [
-                    string(defaultValue: '', description: 'Enter OTP here', name: 'OTP_CODE')
-                ]
-            }
-        
 
         stage('Continue After OTP') {
             steps {
-                echo "Received OTP: ${params.OTP_CODE}"
-                // Use OTP_CODE in your automation as needed
+                echo "OTP entered: ${env.OTP_VALUE}"
+                // Your automation steps that use OTP_VALUE
             }
         }
-    }
 
-
-
-        stage('Publish Reports') {
+        stage('Publish Report') {
             steps {
-                publishHTML([
-                    allowMissing: true,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
+                publishHTML(target: [
                     reportDir: 'reports',
                     reportFiles: 'report.html',
-                    reportName: 'Pytest HTML Report'
+                    reportName: 'Pytest Report'
                 ])
             }
         }
     }
 
-
-
     post {
         always {
             echo "Build finished"
-        }
-        success {
-            echo "Build succeeded!"
-        }
-        failure {
-            echo "Build failed!"
         }
     }
 }
