@@ -8,20 +8,11 @@ import os
 
 
 @pytest.fixture
-def driver(request):
-    """Start and yield a Chrome WebDriver, then quit afterward."""
+def driver():
     options = Options()
-    # options.add_argument("--start-maximized")
-    # options.add_argument("--headless")  # Uncomment to run without opening browser window
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=Service('/path/to/chromedriver'), options=options)
-    # options.add_argument('--headless')  # optional for headless mode
-
-
-    # driver = webdriver.Chrome(service=service, options=options)
-    driver.implicitly_wait(10)
-
-    request.node.driver = driver
+    # options.add_argument("--headless")  # Uncomment if you want headless
+    service = Service(ChromeDriverManager().install())  # <-- auto-download driver
+    driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
 
