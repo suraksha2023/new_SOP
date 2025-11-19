@@ -69,6 +69,8 @@ class SOPProposerApproval:
 
         self.wait.until(EC.element_to_be_clickable((By.ID, "page_no_confirmation"))).click()
         time.sleep(5)
+
+
         version_input = self.wait.until(EC.element_to_be_clickable((By.ID, "version_no")))
         version_input.clear()
         version_input.send_keys("2")
@@ -80,7 +82,7 @@ class SOPProposerApproval:
 
         summary = self.wait.until(EC.element_to_be_clickable((By.ID, "summary_changes")))
         summary.send_keys("all ok")
-        time.sleep(5)
+        time.sleep(10)
 
         to_publisher_btn = self.wait.until(EC.element_to_be_clickable((By.ID, "toPublisher")))
         driver.execute_script("arguments[0].scrollIntoView(true);", to_publisher_btn)

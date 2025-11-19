@@ -8,11 +8,16 @@ import os
 
 
 @pytest.fixture
-def driver():
+def driver(request):
     options = Options()
+    options.add_argument("--start-maximized")
     # options.add_argument("--headless")  # Uncomment if you want headless
+
     service = Service(ChromeDriverManager().install())  # <-- auto-download driver
     driver = webdriver.Chrome(service=service, options=options)
+    driver.implicitly_wait(10)
+
+    request.node.driver = driver
     yield driver
     driver.quit()
 
