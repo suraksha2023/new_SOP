@@ -45,4 +45,3 @@ def test_sop_full_flow_ddt(driver, data):
         pytest.skip(f"⚠️ Unknown role type: {role}")
     login.logout()
     time.sleep(3)
-
