@@ -19,7 +19,7 @@ def driver(request):
     # Use correct keyword argument 'version' to specify ChromeDriver version
     service = Service(ChromeDriverManager().install())  # specify exact version if needed
     driver = webdriver.Chrome(service=service, options=options)
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(20)
 
     # request.node.driver = driver
     yield driver
