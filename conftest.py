@@ -13,11 +13,11 @@ def driver(request):
     # options.add_argument("--headless")  # Uncomment for headless
 
     # Use correct keyword argument 'version' to specify ChromeDriver version
-    service = Service(ChromeDriverManager(version="142.0.7444.175").install())  # specify exact version if needed
+    service = Service(ChromeDriverManager().install())  # specify exact version if needed
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
 
-    request.node.driver = driver
+    # request.node.driver = driver
     yield driver
     driver.quit()
 
