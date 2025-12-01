@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PYTHON = "python3"
-        DISPLAY = ":0"    // 👈 IMPORTANT (enables live browser)
+        DISPLAY = ":0"  // Enables live browser display
     }
 
     stages {
@@ -27,11 +27,11 @@ pipeline {
 
         stage('Run Tests Before OTP') {
             steps {
-                sh """
-                    export PYTHONPATH=\$(pwd):\$PYTHONPATH
-                    ./venv/bin/pytest -m pytest tests/test_sop_full_ddt.py
-                        --html=reports/report.html --self-contained-html
-                """
+                sh '''
+                    mkdir -p reports
+                    export PYTHONPATH=$(pwd):$PYTHONPATH
+                    ./venv/bin/pytest tests/test_sop_full_ddt.py --html=reports/report.html --self-contained-html
+                '''
             }
         }
 
@@ -50,7 +50,7 @@ pipeline {
         stage('Continue After OTP') {
             steps {
                 echo "OTP entered: ${env.OTP_VALUE}"
-                // Your automation steps that use OTP_VALUE
+                // Add your OTP dependent automation steps here
             }
         }
 

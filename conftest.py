@@ -6,14 +6,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 import os
 
-
 @pytest.fixture
 def driver(request):
     options = Options()
     options.add_argument("--start-maximized")
-    # options.add_argument("--headless")  # Uncomment if you want headless
+    # options.add_argument("--headless")  # Uncomment for headless
 
-    service = Service(ChromeDriverManager(driver_version="142.0.7444.175").install())  # <-- auto-download driver
+    # Use correct keyword argument 'version' to specify ChromeDriver version
+    service = Service(ChromeDriverManager(version="142.0.7444.175").install())  # specify exact version if needed
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
 
@@ -21,29 +21,24 @@ def driver(request):
     yield driver
     driver.quit()
 
-
 # ⛔ Automatic screenshot capture + embed in HTML report
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """Hook called after each test phase to attach screenshot on failure."""
+    """Hook to attach screenshots to pytest-html report on test failure."""
     outcome = yield
     rep = outcome.get_result()
 
-    # Only act if the test failed
     if rep.when == "call" and rep.failed:
         driver = getattr(item, "driver", None)
         if driver:
-            # Create screenshots folder
             os.makedirs("screenshots", exist_ok=True)
             timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             test_name = item.name.replace("/", "_").replace("\\", "_")
             screenshot_path = os.path.join("screenshots", f"{test_name}_{timestamp}.png")
 
-            # Save screenshot
             driver.save_screenshot(screenshot_path)
             print(f"\n📸 Screenshot saved: {screenshot_path}")
 
-            # Attach screenshot to pytest-html report
             if hasattr(rep, "extra"):
                 from pytest_html import extras
                 rep.extra.append(extras.image(screenshot_path))

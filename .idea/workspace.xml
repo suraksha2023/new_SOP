@@ -14,6 +14,9 @@
       <change beforePath="$PROJECT_DIR$/../../Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jenkinsfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reports/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Reports/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Reports/report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/report.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../requirements.txt" afterDir="false" />
@@ -34,7 +37,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -45,14 +48,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_SOP_Doc.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_sop_full_ddt.py.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_SOP_Doc.py.executor": "Run",
+    "Python tests.Python tests in test_sop_full_ddt.py.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/screenshots" />

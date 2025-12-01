@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="13.512" timestamp="2025-12-01T12:51:25.632484+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase time="1.336" /><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">Traceback (most recent call last):
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="4" time="135.032" timestamp="2025-12-01T15:01:38.084854+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data0]" time="37.773" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data1]" time="46.605" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data2]" time="39.092" /><testcase time="1.114" /><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">Traceback (most recent call last):
   File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 318, in wrap_session
     session.exitstatus = doit(config, session) or 0
                          ^^^^^^^^^^^^^^^^^^^^^
@@ -98,19 +98,19 @@
     raise exception_class(message, screen, stacktrace)
 selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
 Stacktrace:
-#0 0x59d7471734ca &lt;unknown&gt;
-#1 0x59d746bc1c78 &lt;unknown&gt;
-#2 0x59d746c05d92 &lt;unknown&gt;
-#3 0x59d746c3a656 &lt;unknown&gt;
-#4 0x59d746c34c90 &lt;unknown&gt;
-#5 0x59d746c33fe2 &lt;unknown&gt;
-#6 0x59d746b88f85 &lt;unknown&gt;
-#7 0x59d747139cf9 &lt;unknown&gt;
-#8 0x59d74713ccdc &lt;unknown&gt;
-#9 0x59d747122f79 &lt;unknown&gt;
-#10 0x59d74713d8b5 &lt;unknown&gt;
-#11 0x59d74710a9c3 &lt;unknown&gt;
-#12 0x59d746b867f2 &lt;unknown&gt;
-#13 0x7066bfe2a1ca &lt;unknown&gt;
-#14 0x7066bfe2a28b __libc_start_main
-#15 0x59d746b4942a _start</error></testcase></testsuite></testsuites>
+#0 0x5623e98c54ca &lt;unknown&gt;
+#1 0x5623e9313c78 &lt;unknown&gt;
+#2 0x5623e9357d92 &lt;unknown&gt;
+#3 0x5623e938c656 &lt;unknown&gt;
+#4 0x5623e9386c90 &lt;unknown&gt;
+#5 0x5623e9385fe2 &lt;unknown&gt;
+#6 0x5623e92daf85 &lt;unknown&gt;
+#7 0x5623e988bcf9 &lt;unknown&gt;
+#8 0x5623e988ecdc &lt;unknown&gt;
+#9 0x5623e9874f79 &lt;unknown&gt;
+#10 0x5623e988f8b5 &lt;unknown&gt;
+#11 0x5623e985c9c3 &lt;unknown&gt;
+#12 0x5623e92d87f2 &lt;unknown&gt;
+#13 0x7072b302a1ca &lt;unknown&gt;
+#14 0x7072b302a28b __libc_start_main
+#15 0x5623e929b42a _start</error></testcase></testsuite></testsuites>
