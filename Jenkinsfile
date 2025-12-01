@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh """
                     export PYTHONPATH=\$(pwd):\$PYTHONPATH
-                    ./venv/bin/pytest -v tests/test_sop_full_ddt.py
+                    ./venv/bin/pytest -m pytest tests/test_sop_full_ddt.py
                         --html=reports/report.html --self-contained-html
                 """
             }

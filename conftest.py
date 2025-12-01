@@ -13,7 +13,7 @@ def driver(request):
     options.add_argument("--start-maximized")
     # options.add_argument("--headless")  # Uncomment if you want headless
 
-    service = Service(ChromeDriverManager(version="142.0.7444.175").install())  # <-- auto-download driver
+    service = Service(ChromeDriverManager(driver_version="142.0.7444.175").install())  # <-- auto-download driver
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(10)
 
