@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PYTHON = "python3"
-        DISPLAY = ":99"  // Use Xvfb virtual display
+        DISPLAY = ":99"
     }
 
     stages {
@@ -28,15 +28,20 @@ pipeline {
         stage('Run Tests Before OTP') {
             steps {
                 sh '''
-                    # Start Xvfb in the background for virtual display
-                    Xvfb :99 -screen 0 1920x1080x24 &
+                    echo "Starting Xvfb..."
+                    # Start Xvfb background process
+                    Xvfb :99 -ac -screen 0 1920x1080x24 &
+                    sleep 3
+
                     export DISPLAY=:99
+                    echo "DISPLAY set to $DISPLAY"
 
                     mkdir -p reports
                     export PYTHONPATH=$(pwd):$PYTHONPATH
 
-                    # Run pytest with python -m pytest to avoid file not found errors
-                    ./venv/bin/python -m pytest tests/test_sop_full_ddt.py --html=reports/report.html --self-contained-html
+                    echo "Running pytest..."
+                    ./venv/bin/python -m pytest tests/test_sop_full_ddt.py \
+                        --html=reports/report.html --self-contained-html
                 '''
             }
         }
@@ -56,7 +61,6 @@ pipeline {
         stage('Continue After OTP') {
             steps {
                 echo "OTP entered: ${env.OTP_VALUE}"
-                // Add your OTP-dependent steps here
             }
         }
 
