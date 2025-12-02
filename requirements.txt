@@ -5,3 +5,4 @@ pytest-xdist
 allure-pytest
 openpyxl
 xlrd==1.2.0
+webdriver-manager

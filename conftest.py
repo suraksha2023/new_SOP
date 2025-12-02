@@ -8,46 +8,42 @@ import os
 
 @pytest.fixture
 def driver(request):
+    """Start and yield a Chrome WebDriver, then quit afterward."""
     options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--disable-software-rasterizer")
-    options.add_argument("--disable-extensions")
-    options.add_argument("--remote-debugging-port=9222")
-    options.add_argument("--disable-webgl")
+    options.add_argument("--start-maximized")
+    # options.add_argument("--headless")  # Uncomment to run without opening browser window
 
-    # options.add_argument("--headless")  # Uncomment for headless
-
-    # Use correct keyword argument 'version' to specify ChromeDriver version
-    service = Service(ChromeDriverManager().install())  # specify exact version if needed
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
-    driver.implicitly_wait(20)
+    driver.implicitly_wait(10)
 
-    # request.node.driver = driver
+    request.node.driver = driver
     yield driver
     driver.quit()
+
 
 # ⛔ Automatic screenshot capture + embed in HTML report
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """Hook to attach screenshots to pytest-html report on test failure."""
+    """Hook called after each test phase to attach screenshot on failure."""
     outcome = yield
     rep = outcome.get_result()
 
+    # Only act if the test failed
     if rep.when == "call" and rep.failed:
         driver = getattr(item, "driver", None)
         if driver:
+            # Create screenshots folder
             os.makedirs("screenshots", exist_ok=True)
             timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             test_name = item.name.replace("/", "_").replace("\\", "_")
             screenshot_path = os.path.join("screenshots", f"{test_name}_{timestamp}.png")
 
+            # Save screenshot
             driver.save_screenshot(screenshot_path)
             print(f"\n📸 Screenshot saved: {screenshot_path}")
 
+            # Attach screenshot to pytest-html report
             if hasattr(rep, "extra"):
                 from pytest_html import extras
                 rep.extra.append(extras.image(screenshot_path))

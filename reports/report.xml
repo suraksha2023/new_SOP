@@ -1,1 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="0" time="8.682" timestamp="2025-12-01T16:18:30.922765+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase time="1.407" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="12.896" timestamp="2025-12-01T16:48:25.152589+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase time="1.406" /><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">Traceback (most recent call last):
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 318, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 372, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/logging.py", line 801, in pytest_runtestloop
+    return (yield)  # Run all the tests.
+            ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/terminal.py", line 714, in pytest_runtestloop
+    result = yield
+             ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 396, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/warnings.py", line 89, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/assertion/__init__.py", line 192, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/unittest.py", line 573, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
+    teardown.throw(exception)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/faulthandler.py", line 102, in pytest_runtest_protocol
+    return (yield)
+            ^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 137, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 249, in call_and_report
+    report: TestReport = ihook.pytest_runtest_makereport(item=item, call=call)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
+    raise exception
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 152, in _multicall
+    teardown.send(result)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 43, in run_old_style_hookwrapper
+    teardown.send(result)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/conftest.py", line 43, in pytest_runtest_makereport
+    driver.save_screenshot(screenshot_path)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1025, in save_screenshot
+    return self.get_screenshot_as_file(filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1000, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1034, in get_screenshot_as_png
+    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1044, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 233, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=142.0.7444.175)
+Stacktrace:
+#0 0x555bcd08c4ca &lt;unknown&gt;
+#1 0x555bccadae4b &lt;unknown&gt;
+#2 0x555bccaaf580 &lt;unknown&gt;
+#3 0x555bccb5bc18 &lt;unknown&gt;
+#4 0x555bccb79802 &lt;unknown&gt;
+#5 0x555bccb1fc2a &lt;unknown&gt;
+#6 0x555bccb20931 &lt;unknown&gt;
+#7 0x555bcd052cf9 &lt;unknown&gt;
+#8 0x555bcd055cdc &lt;unknown&gt;
+#9 0x555bcd03bf79 &lt;unknown&gt;
+#10 0x555bcd0568b5 &lt;unknown&gt;
+#11 0x555bcd0239c3 &lt;unknown&gt;
+#12 0x555bcd079228 &lt;unknown&gt;
+#13 0x555bcd079403 &lt;unknown&gt;
+#14 0x555bcd08b463 &lt;unknown&gt;
+#15 0x74eecf09caa4 &lt;unknown&gt;
+#16 0x74eecf129c6c &lt;unknown&gt;</error></testcase></testsuite></testsuites>

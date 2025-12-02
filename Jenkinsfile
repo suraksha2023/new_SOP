@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PYTHON = "python3"
-        DISPLAY = ":99"
+        DISPLAY = ":0"
     }
 
     stages {
