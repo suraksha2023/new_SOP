@@ -1,119 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="12.896" timestamp="2025-12-01T16:48:25.152589+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase time="1.406" /><testcase classname="pytest" name="internal" time="0.000"><error message="internal error">Traceback (most recent call last):
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 318, in wrap_session
-    session.exitstatus = doit(config, session) or 0
-                         ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 372, in _main
-    config.hook.pytest_runtestloop(session=session)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
-    raise exception
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/logging.py", line 801, in pytest_runtestloop
-    return (yield)  # Run all the tests.
-            ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/terminal.py", line 714, in pytest_runtestloop
-    result = yield
-             ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
-    res = hook_impl.function(*args)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/main.py", line 396, in pytest_runtestloop
-    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
-    raise exception
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/warnings.py", line 89, in pytest_runtest_protocol
-    return (yield)
-            ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/assertion/__init__.py", line 192, in pytest_runtest_protocol
-    return (yield)
-            ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/unittest.py", line 573, in pytest_runtest_protocol
-    return (yield)
-            ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-    teardown.throw(exception)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/faulthandler.py", line 102, in pytest_runtest_protocol
-    return (yield)
-            ^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
-    res = hook_impl.function(*args)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 118, in pytest_runtest_protocol
-    runtestprotocol(item, nextitem=nextitem)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 137, in runtestprotocol
-    reports.append(call_and_report(item, "call", log))
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/_pytest/runner.py", line 249, in call_and_report
-    report: TestReport = ihook.pytest_runtest_makereport(item=item, call=call)
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
-    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
-    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
-    raise exception
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 152, in _multicall
-    teardown.send(result)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/pluggy/_callers.py", line 43, in run_old_style_hookwrapper
-    teardown.send(result)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/conftest.py", line 43, in pytest_runtest_makereport
-    driver.save_screenshot(screenshot_path)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1025, in save_screenshot
-    return self.get_screenshot_as_file(filename)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1000, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1034, in get_screenshot_as_png
-    return b64decode(self.get_screenshot_as_base64().encode("ascii"))
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 1044, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)["value"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
-    self.error_handler.check_response(response)
-  File "/home/suraksha/Downloads/UconnectPolicies/new_code/SOP/.venv/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 233, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=142.0.7444.175)
-Stacktrace:
-#0 0x555bcd08c4ca &lt;unknown&gt;
-#1 0x555bccadae4b &lt;unknown&gt;
-#2 0x555bccaaf580 &lt;unknown&gt;
-#3 0x555bccb5bc18 &lt;unknown&gt;
-#4 0x555bccb79802 &lt;unknown&gt;
-#5 0x555bccb1fc2a &lt;unknown&gt;
-#6 0x555bccb20931 &lt;unknown&gt;
-#7 0x555bcd052cf9 &lt;unknown&gt;
-#8 0x555bcd055cdc &lt;unknown&gt;
-#9 0x555bcd03bf79 &lt;unknown&gt;
-#10 0x555bcd0568b5 &lt;unknown&gt;
-#11 0x555bcd0239c3 &lt;unknown&gt;
-#12 0x555bcd079228 &lt;unknown&gt;
-#13 0x555bcd079403 &lt;unknown&gt;
-#14 0x555bcd08b463 &lt;unknown&gt;
-#15 0x74eecf09caa4 &lt;unknown&gt;
-#16 0x74eecf129c6c &lt;unknown&gt;</error></testcase></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="390.047" timestamp="2025-12-02T12:46:15.168062+05:30" hostname="suraksha-HP-ProBook-440-G7"><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data0]" time="35.355" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data1]" time="36.500" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data2]" time="36.459" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data3]" time="36.191" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data4]" time="37.285" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data5]" time="38.584" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data6]" time="37.957" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data7]" time="35.189" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data8]" time="35.241" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data9]" time="27.789" /><testcase classname="new_code.SOP.tests.test_sop_full_ddt" name="test_sop_full_flow_ddt[data10]" time="33.025"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;#0 0x5dcf7128c4ca &lt;unknown&gt;&#10;#1 0x5dcf70cdae4b &lt;unknown&gt;&#10;#2 0x5dcf70d2d814 &lt;unknown&gt;&#10;#3 0x5dcf70d2da51 &lt;unknown&gt;&#10;#4 0x5dcf70d7ca44 &lt;unknown&gt;&#10;#5 0x5dcf70d79df7 &lt;unknown&gt;&#10;#6 0x5dcf70d1fc2a &lt;unknown&gt;&#10;#7 0x5dcf70d20931 &lt;unknown&gt;&#10;#8 0x5dcf71252cf9 &lt;unknown&gt;&#10;#9 0x5dcf71255cdc &lt;unknown&gt;&#10;#10 0x5dcf7123bf79 &lt;unknown&gt;&#10;#11 0x5dcf712568b5 &lt;unknown&gt;&#10;#12 0x5dcf712239c3 &lt;unknown&gt;&#10;#13 0x5dcf71279228 &lt;unknown&gt;&#10;#14 0x5dcf71279403 &lt;unknown&gt;&#10;#15 0x5dcf7128b463 &lt;unknown&gt;&#10;#16 0x7cbfcd89caa4 &lt;unknown&gt;&#10;#17 0x7cbfcd929c6c &lt;unknown&gt;">driver = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="7de57f99fd6d631f0db31c00eda50a05")&gt;
+data = {'file_path': None, 'password': '123456789', 'role': 'Publisher', 'sop_title': 'SOP_AutoTest_15', ...}
+
+    @pytest.mark.parametrize("data", sop_data)
+    def test_sop_full_flow_ddt(driver, data):
+        login = LoginPage(driver)
+        proposer = SOPProposerPage(driver)
+        recommender = SOPRecommenderPage(driver)
+        approver = SOPApproverPage(driver)
+        proposer_approval = SOPProposerApproval(driver)
+        publisher = SOPPublishPage(driver)
+    
+        role = data["role"]
+        username = data["username"]
+        password = data["password"]
+        sop_title = data["sop_title"]
+        sop_file = data.get("file_path")
+    
+        print(f"\n#x1F539 Running step for {role} ({username})")
+    
+        login.login(username, password)
+        if role == "Proposer":
+            proposer.create_new_document(sop_title, sop_file)
+        elif role == "Recommender":
+            recommender.find_document_across_pages(sop_title)
+        elif role in approver_roles:
+            approver.open_and_approve_from_last_page(sop_title)
+        elif role == "Proposer_Verification":
+            proposer_approval.open_and_approve(sop_title)
+        elif role == "Publisher":
+&gt;           publisher.open_and_approve(sop_title)
+
+tests/test_sop_full_ddt.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+pages/sop_published.py:39: in open_and_approve
+    self.wait.until(EC.element_to_be_clickable((By.XPATH, "//label[@class='switch-menu']"))).click()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;selenium.webdriver.support.wait.WebDriverWait (session="7de57f99fd6d631f0db31c00eda50a05")&gt;
+method = &lt;function element_to_be_clickable.&lt;locals&gt;._predicate at 0x77b596031120&gt;, message = ''
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -&gt; T:
+        """Wait until the method returns a value that is not False.
+    
+        Calls the method provided with the driver as an argument until the
+        return value does not evaluate to ``False``.
+    
+        Parameters:
+        -----------
+        method: callable(WebDriver)
+            - A callable object that takes a WebDriver instance as an argument.
+    
+        message: str
+            - Optional message for :exc:`TimeoutException`
+    
+        Return:
+        -------
+        object: T
+            - The result of the last call to `method`
+    
+        Raises:
+        -------
+        TimeoutException
+            - If 'method' does not return a truthy value within the WebDriverWait
+            object's timeout
+    
+        Example:
+        --------
+        &gt;&gt;&gt; from selenium.webdriver.common.by import By
+        &gt;&gt;&gt; from selenium.webdriver.support.ui import WebDriverWait
+        &gt;&gt;&gt; from selenium.webdriver.support import expected_conditions as EC
+    
+        # Wait until an element is visible on the page
+        &gt;&gt;&gt; wait = WebDriverWait(driver, 10)
+        &gt;&gt;&gt; element = wait.until(EC.visibility_of_element_located((By.ID, "exampleId")))
+        &gt;&gt;&gt; print(element.text)
+        """
+        screen = None
+        stacktrace = None
+    
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            if time.monotonic() &gt; end_time:
+                break
+            time.sleep(self._poll)
+&gt;       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message: 
+E       Stacktrace:
+E       #0 0x5dcf7128c4ca &lt;unknown&gt;
+E       #1 0x5dcf70cdae4b &lt;unknown&gt;
+E       #2 0x5dcf70d2d814 &lt;unknown&gt;
+E       #3 0x5dcf70d2da51 &lt;unknown&gt;
+E       #4 0x5dcf70d7ca44 &lt;unknown&gt;
+E       #5 0x5dcf70d79df7 &lt;unknown&gt;
+E       #6 0x5dcf70d1fc2a &lt;unknown&gt;
+E       #7 0x5dcf70d20931 &lt;unknown&gt;
+E       #8 0x5dcf71252cf9 &lt;unknown&gt;
+E       #9 0x5dcf71255cdc &lt;unknown&gt;
+E       #10 0x5dcf7123bf79 &lt;unknown&gt;
+E       #11 0x5dcf712568b5 &lt;unknown&gt;
+E       #12 0x5dcf712239c3 &lt;unknown&gt;
+E       #13 0x5dcf71279228 &lt;unknown&gt;
+E       #14 0x5dcf71279403 &lt;unknown&gt;
+E       #15 0x5dcf7128b463 &lt;unknown&gt;
+E       #16 0x7cbfcd89caa4 &lt;unknown&gt;
+E       #17 0x7cbfcd929c6c &lt;unknown&gt;
+
+.venv/lib/python3.12/site-packages/selenium/webdriver/support/wait.py:138: TimeoutException</failure></testcase></testsuite></testsuites>

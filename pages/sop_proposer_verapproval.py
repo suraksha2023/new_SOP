@@ -19,8 +19,10 @@ class SOPProposerApproval:
         self.driver = driver
         self.wait = WebDriverWait(driver, 30)
 
-    def open_and_approve(self, title):
+    def open_and_approve(self, sop_title):
         """Goes to Under-Review Docs → jumps to last page → finds SOP by title → approves."""
+        print("DEBUG: waiting for page_no_confirmation for", sop_title)
+        self.driver.save_screenshot("screenshots/before_page_no_conf.png")
         driver = self.driver
 
         # Step 1️⃣ Navigate to Under-Review Docs
@@ -56,10 +58,10 @@ class SOPProposerApproval:
             )
             driver.execute_script("arguments[0].scrollIntoView(true);", sop_doc)
             driver.execute_script("arguments[0].click();", sop_doc)
-            print(f"📄 Opened document titled: {title}")
+            print(f"📄 Opened document titled: {sop_title}")
             snap(driver, "sop_document_opened")
         except:
-            print(f"❌ Document titled '{title}' not found on last page.")
+            print(f"❌ Document titled '{sop_title}' not found on last page.")
             return
 
         # Step 4️⃣ Approve flow
@@ -67,8 +69,12 @@ class SOPProposerApproval:
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(1)
 
-        self.wait.until(EC.element_to_be_clickable((By.ID, "page_no_confirmation"))).click()
-        time.sleep(5)
+        element = self.wait.until(
+            EC.visibility_of_element_located((By.ID, "page_no_confirmation"))
+        )
+        self.wait.until(
+            EC.element_to_be_clickable((By.ID, "page_no_confirmation"))
+        ).click()
 
 
         version_input = self.wait.until(EC.element_to_be_clickable((By.ID, "version_no")))
@@ -89,4 +95,4 @@ class SOPProposerApproval:
         driver.execute_script("arguments[0].click();", to_publisher_btn)
         snap(driver, "proposer_final_approval_done")
 
-        print(f"✅ Final Proposer approved SOP '{title}' successfully!")
+        print(f"✅ Final Proposer approved SOP '{sop_title}' successfully!")

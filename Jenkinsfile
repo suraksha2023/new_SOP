@@ -27,22 +27,15 @@ pipeline {
 
         stage('Run Tests Before OTP') {
             steps {
-                sh '''
-                    echo "Starting Xvfb..."
-                    # Start Xvfb background process
-                    Xvfb :99 -ac -screen 0 1920x1080x24 &
-                    sleep 3
+                 sh '''
+            echo "Using real display $DISPLAY"
 
-                    export DISPLAY=:99
-                    echo "DISPLAY set to $DISPLAY"
+            mkdir -p reports
+            export PYTHONPATH="$(pwd):$PYTHONPATH"
 
-                    mkdir -p reports
-                    export PYTHONPATH=$(pwd):$PYTHONPATH
-
-                    echo "Running pytest..."
-                    ./venv/bin/python -m pytest tests/test_sop_full_ddt.py \
-                        --html=reports/report.html --self-contained-html
-                '''
+            ./venv/bin/python -m pytest tests/test_sop_full_ddt.py \
+                --html=reports/report.html --self-contained-html
+        '''
             }
         }
 
