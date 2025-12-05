@@ -9,7 +9,16 @@ from pages.sop_proposer_verapproval import SOPProposerApproval
 from pages.sop_published import SOPPublishPage
 
 # Load Excel data once
-sop_data = read_sop_data("data/sop_data.xlsx")
+raw_sop_data = read_sop_data("data/sop_data.xlsx")
+
+sop_data = [
+    row for row in raw_sop_data
+    if row
+    and row.get("role")
+    and row.get("username")
+    and row.get("password")
+    and row.get("sop_title")
+]
 
 approver_roles = [f"Approver{i}" for i in range(1, 8)]  # For Approver1 to Approver7
 
@@ -31,6 +40,7 @@ def test_sop_full_flow_ddt(driver, data):
     print(f"\n🔹 Running step for {role} ({username})")
 
     login.login(username, password)
+
     if role == "Proposer":
         proposer.create_new_document(sop_title, sop_file)
     elif role == "Recommender":
@@ -43,5 +53,6 @@ def test_sop_full_flow_ddt(driver, data):
         publisher.open_and_approve(sop_title)
     else:
         pytest.skip(f"⚠️ Unknown role type: {role}")
+
     login.logout()
     time.sleep(3)
